@@ -30,5 +30,13 @@
         <textarea name="message" id="" cols="30" rows="10" placeholder="enter message"></textarea>
         <input type="submit" name="submit" value="send it">
     </form>
+    <?php 
+        if(isset($_POST["submit"])){
+            $name = $_POST["name"];
+            $msg = $_POST["message"];
+            $query = "INSERT INTO chat (name, msg) VALUES ('$name', '$msg')";
+            $run = $con->query($query);
+        }
+    ?>
 </body>
 </html>
